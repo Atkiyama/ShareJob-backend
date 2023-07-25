@@ -20,7 +20,12 @@ export default async function (req: Request, res: Response) {
             const user: User = new UserModel({
                 name: req.body.name,
                 email: req.body.email,
+                abstract: "",
+                birthday: "",
                 password: hashedPassword,
+                follow: [],
+                follower: [],
+                favorite: []
             });
 
             await user.save();

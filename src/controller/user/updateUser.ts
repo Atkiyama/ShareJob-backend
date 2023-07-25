@@ -26,7 +26,12 @@ export default async function (req: Request, res: Response) {
             },
                 {
                     $set: {
+                        abstract: req.body.abstract,
+                        birthday: req.body.birthday,
                         password: hashedPassword,
+                        follow: req.body.follow,
+                        follower: req.body.follower,
+                        favorite: req.body.favorite
                     }
                 });
             const test: User | null = await UserModel.findOne({ email: req.params.email });

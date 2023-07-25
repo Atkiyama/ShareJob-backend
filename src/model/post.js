@@ -23,7 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserModel = void 0;
+exports.PostModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const PostSchema = new mongoose_1.Schema({
     id: {
@@ -46,4 +46,4 @@ const PostSchema = new mongoose_1.Schema({
 }, {
     collection: 'post' // コレクション名を指定
 });
-exports.UserModel = mongoose_1.default.model('post', PostSchema);
+exports.PostModel = mongoose_1.default.model('post', PostSchema);

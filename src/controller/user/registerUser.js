@@ -33,7 +33,12 @@ function default_1(req, res) {
                 const user = new user_1.UserModel({
                     name: req.body.name,
                     email: req.body.email,
+                    abstract: "",
+                    birthday: "",
                     password: hashedPassword,
+                    follow: [],
+                    follower: [],
+                    favorite: []
                 });
                 yield user.save();
                 return res.status(200).json({ message: "ユーザー登録に成功しました" });

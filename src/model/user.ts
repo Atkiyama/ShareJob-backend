@@ -29,12 +29,12 @@ const UserSchema: Schema<User> = new Schema({
     },
     abstract: {
         type: String,
-        required: true,
+        required: false,
     },
 
     birthday: {
         type: String,
-        required: true,
+        required: false,
     },
 
     password: {
@@ -43,17 +43,17 @@ const UserSchema: Schema<User> = new Schema({
     },
     follow: {
         type: [String],
-        required: true,
+        required: false,
     },
 
     follower: {
         type: [String],
-        required: true,
+        required: false,
     },
 
     favorite: {
         type: [String],
-        required: true,
+        required: false,
     },
 
 

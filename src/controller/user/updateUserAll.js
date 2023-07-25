@@ -35,9 +35,12 @@ function default_1(req, res) {
             const oldUser = yield user_1.UserModel.findOne({ email: req.params.email });
             if (oldUser) {
                 const user = new user_1.UserModel({
-                    email: req.body.email,
-                    name: req.body.name,
-                    password: hashedPassword
+                    abstract: req.body.abstract,
+                    birthday: req.body.birthday,
+                    password: hashedPassword,
+                    follow: req.body.follow,
+                    follower: req.body.follower,
+                    favorite: req.body.favorite
                 });
                 yield user_1.UserModel.deleteOne({
                     email: req.params.email,

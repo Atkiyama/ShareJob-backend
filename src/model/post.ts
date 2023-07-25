@@ -8,8 +8,6 @@ export interface Post extends Document {
     date: string;
     content: string;
     email: string;
-
-
 }
 
 
@@ -43,4 +41,4 @@ const PostSchema: Schema<Post> = new Schema({
 
 
 
-export const UserModel: Model<Post> = mongoose.model<Post>('post', PostSchema);
+export const PostModel: Model<Post> = mongoose.model<Post>('post', PostSchema);

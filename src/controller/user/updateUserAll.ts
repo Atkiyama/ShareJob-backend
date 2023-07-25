@@ -24,9 +24,12 @@ export default async function (req: Request, res: Response) {
         const oldUser: User | null = await UserModel.findOne({ email: req.params.email });
         if (oldUser) {
             const user: User = new UserModel({
-                email: req.body.email,
-                name: req.body.name,
-                password: hashedPassword
+                abstract: req.body.abstract,
+                birthday: req.body.birthday,
+                password: hashedPassword,
+                follow: req.body.follow,
+                follower: req.body.follower,
+                favorite: req.body.favorite
             });
 
             await UserModel.deleteOne({

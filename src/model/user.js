@@ -37,11 +37,11 @@ const UserSchema = new mongoose_1.Schema({
     },
     abstract: {
         type: String,
-        required: true,
+        required: false,
     },
     birthday: {
         type: String,
-        required: true,
+        required: false,
     },
     password: {
         type: String,
@@ -49,15 +49,15 @@ const UserSchema = new mongoose_1.Schema({
     },
     follow: {
         type: [String],
-        required: true,
+        required: false,
     },
     follower: {
         type: [String],
-        required: true,
+        required: false,
     },
     favorite: {
         type: [String],
-        required: true,
+        required: false,
     },
 }, {
     collection: 'user' // コレクション名を指定

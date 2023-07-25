@@ -38,7 +38,12 @@ function default_1(req, res) {
                     email: req.params.email,
                 }, {
                     $set: {
+                        abstract: req.body.abstract,
+                        birthday: req.body.birthday,
                         password: hashedPassword,
+                        follow: req.body.follow,
+                        follower: req.body.follower,
+                        favorite: req.body.favorite
                     }
                 });
                 const test = yield user_1.UserModel.findOne({ email: req.params.email });

@@ -17,6 +17,8 @@ import searchCompany from '../controller/company/searchCompany';
 import getRegisterCompanyList from '../controller/company/getRegisterCompanyList';
 import updateCompany from '../controller/company/updateCompany';
 import registerCompany from '../controller/company/registerCompany';
+import getPosts from '../controller/post/getFavorite';
+import getFavorite from '../controller/post/getFavorite';
 
 /**
  * APIのルーティングとログ出力を定義する
@@ -88,6 +90,7 @@ router.use(logRequestAndResponse);
 /**
  * ルーティング部分
  */
+/*
 router.post('/user/login', loginUser);
 router.post('/user/register', registerUser);
 router.get('/myCompany/getMyCompanyList', auth, getMyCompanyList);
@@ -102,5 +105,23 @@ router.get('/company/searchCompany', auth, searchCompany);
 router.get('/company/getRegisterCompanyList', auth, getRegisterCompanyList);
 router.put('/company/updateCompany/:id', auth, updateCompany)
 router.post('/company/registerCompany', auth, registerCompany)
+*/
+router.post('/user/login', loginUser);
+router.post('/user/register', registerUser);
+router.get('/myCompany/getMyCompanyList', getMyCompanyList);
+router.post('/myCompany/registerMyCompany', registerMyCompany);
+router.get('/company/getCompanyList', getCompanyList);
+router.put('/myCompany/updateMyCompany/:email/:id', updateMyCompany);
+router.delete('/myCompany/deleteMyCompany/:email/:id', deleteMyCompany);
+router.put('/user/update/:email', updateUser);
+router.put('/user/updateAll/:email', updateUserAll);
+router.delete('/user/delete/:email', deleteUser);
+router.get('/company/searchCompany', searchCompany);
+router.get('/company/getRegisterCompanyList', getRegisterCompanyList);
+router.put('/company/updateCompany/:id', updateCompany);
+router.post('/company/registerCompany', registerCompany);
+router.get('/post/getPosts', getPosts)
+router.get('/post/getFavorite', getFavorite)
+
 
 export default router;
