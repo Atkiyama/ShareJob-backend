@@ -6,7 +6,12 @@ import mongoose, { Schema, Document, Model } from 'mongoose';
 export interface User extends Document {
     name: string;
     email: string;
+    abstract: string;
+    birthday: string;
     password: string;
+    follow: string[];
+    follower: string[];
+    favorite: string[];
 
 }
 
@@ -22,10 +27,35 @@ const UserSchema: Schema<User> = new Schema({
         required: true,
         unique: true,
     },
+    abstract: {
+        type: String,
+        required: true,
+    },
+
+    birthday: {
+        type: String,
+        required: true,
+    },
+
     password: {
         type: String,
         required: true,
     },
+    follow: {
+        type: [String],
+        required: true,
+    },
+
+    follower: {
+        type: [String],
+        required: true,
+    },
+
+    favorite: {
+        type: [String],
+        required: true,
+    },
+
 
 }, {
     collection: 'user' // コレクション名を指定

@@ -3,7 +3,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const path_1 = __importDefault(require("path"));
 const express_1 = __importDefault(require("express"));
 const auth_1 = __importDefault(require("../utils/auth"));
 const loginUser_1 = __importDefault(require("../controller/user/loginUser"));
@@ -45,7 +44,7 @@ const logRequestAndResponse = (req, res, next) => {
     var _a;
     const requestTime = new Date().toISOString();
     const logMessage = `[${requestTime}] ${req.method} ${req.url}\n`;
-    const logFilePath = path_1.default.join(__dirname, `../../../database/log/${getFormattedDate()}.log`); // 日付ごとのログファイルのパスを指定
+    //const logFilePath = path.join(__dirname, `../../../database/log/${getFormattedDate()}.log`); // 日付ごとのログファイルのパスを指定
     console.log(logMessage); // コンソールにログを表示
     // リクエストヘッダからトークンを取得
     const token = ((_a = req.headers.authorization) === null || _a === void 0 ? void 0 : _a.split(' ')[1]) || 'No token';
