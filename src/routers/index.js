@@ -20,6 +20,7 @@ const updateCompany_1 = __importDefault(require("../controller/company/updateCom
 const registerCompany_1 = __importDefault(require("../controller/company/registerCompany"));
 const getFavorite_1 = __importDefault(require("../controller/post/getFavorite"));
 const getFavorite_2 = __importDefault(require("../controller/post/getFavorite"));
+const postPost_1 = __importDefault(require("../controller/post/postPost"));
 /**
  * APIのルーティングとログ出力を定義する
  */
@@ -110,4 +111,5 @@ router.put('/company/updateCompany/:id', updateCompany_1.default);
 router.post('/company/registerCompany', registerCompany_1.default);
 router.get('/post/getPosts', getFavorite_1.default);
 router.get('/post/getFavorite', getFavorite_2.default);
+router.post('/post/postPost', postPost_1.default);
 exports.default = router;

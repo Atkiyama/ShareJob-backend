@@ -24,6 +24,7 @@ const crypto_1 = require("crypto");
 function default_1(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
+            yield (0, database_1.default)();
             let id = (0, crypto_1.randomUUID)();
             let existTest = yield company_1.CompanyModel.findOne({
                 id: id
@@ -35,7 +36,6 @@ function default_1(req, res) {
                     id: id
                 });
             }
-            yield (0, database_1.default)();
             const company = new company_1.CompanyModel({
                 id: id,
                 name: req.body.name,

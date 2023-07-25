@@ -19,6 +19,7 @@ import updateCompany from '../controller/company/updateCompany';
 import registerCompany from '../controller/company/registerCompany';
 import getPosts from '../controller/post/getFavorite';
 import getFavorite from '../controller/post/getFavorite';
+import postPost from '../controller/post/postPost';
 
 /**
  * APIのルーティングとログ出力を定義する
@@ -122,6 +123,7 @@ router.put('/company/updateCompany/:id', updateCompany);
 router.post('/company/registerCompany', registerCompany);
 router.get('/post/getPosts', getPosts)
 router.get('/post/getFavorite', getFavorite)
+router.post('/post/postPost', postPost)
 
 
 export default router;

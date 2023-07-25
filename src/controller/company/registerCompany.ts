@@ -11,6 +11,8 @@ import { randomUUID } from 'crypto';
  */
 export default async function (req: Request, res: Response) {
     try {
+
+        await connectDB();
         let id = randomUUID();
         let existTest: Company | null = await CompanyModel.findOne({
             id:
@@ -25,7 +27,7 @@ export default async function (req: Request, res: Response) {
                     id
             });
         }
-        await connectDB();
+
         const company: Company = new CompanyModel({
             id: id,
             name: req.body.name,
