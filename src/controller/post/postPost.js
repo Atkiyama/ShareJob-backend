@@ -48,8 +48,8 @@ function default_1(req, res) {
                     email: user.email
                 });
                 yield post.save();
-                const test = yield post_1.PostModel.findOne({ content: req.body.content });
-                return res.status(200).json({ id: id, content: req.body.content, post: test });
+                //挙動が若干怪しい?
+                return res.status(200).json({ message: '投稿が完了しました' });
             }
             else {
                 // `user` が `null` の場合の処理
